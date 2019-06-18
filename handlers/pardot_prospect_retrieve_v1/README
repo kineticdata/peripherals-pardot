@@ -1,0 +1,36 @@
+== Pardot_Prospect_Retrieve_V1
+    This handler retrieves a prospect in Pardot.
+
+=== Parameters
+    [Email]
+        The email of the prospect you want to retrieve.
+
+=== Results
+    [Id]
+        The id of the prospect.
+    [First Name]
+        The first name of the prospect.
+    [Last Name]
+        The last name of the prospect.
+    [Campaign Id]
+        The id of the campaign that the prospect is assigned to.
+    [Email]
+        The email address for the prospect.
+    [Phone]
+        The phone number for the prospect.
+    [Assigned To]
+        The email address of the user assigned to the prospect. If blank, the
+        prospect is currently unassigned.
+
+==== Sample Configuration
+    Email:                                     test.user@acme.com
+
+=== Detailed Description
+    This handler uses the Pardot REST API to retrieve an existing prospect. To 
+    configure the info values, you'll need your email, password, and a user key. 
+    This key can be found in your account settings under the description of API 
+    User Key. After configuring the handler, the email will then be used to 
+    query Pardot and retrieve the prospect associated with the provided email.
+    If the email does not exist, the handler will still return the results, 
+    except all of the results will be empty. So the easiest way to check if a 
+    prospect exists is to see if an id successfully returned.

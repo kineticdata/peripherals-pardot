@@ -1,0 +1,9 @@
+pardot_prospect_create_v1 (2014-09-05)
+* Initial version.  See README for details.
+
+pardot_prospect_create_v2 (2015-08-31)
+* Use Pardot create/update method to avoid duplicate errors.
+* Remove list param. Use add to list handler instead.
+
+2017-05-03
+* Encode the email address in the API URLs

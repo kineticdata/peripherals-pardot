@@ -1,0 +1,5 @@
+pardot_prospect_retrieve_v1 (2014-09-18)
+* Initial version.  See README for details.
+
+2017-05-03
+* Encode the email address in the API URLs

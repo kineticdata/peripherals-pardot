@@ -1,0 +1,8 @@
+pardot_list_add_prosepct_v1 (2014-09-19)
+* Initial version.  See README for details.
+
+pardot_list_add_prosepct_v1 (2015-09-01)
+* Encrypt API Key and Pwd. Better logging.
+
+2017-05-03
+* Encode the email address in the API URLs

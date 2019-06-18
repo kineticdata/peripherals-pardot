@@ -1,0 +1,23 @@
+== Pardot_List_Add_Prospect_V1
+    Adds a prospect to an existing list in Pardot
+
+=== Parameters
+    [Email]
+        The email for the prospect that you wish to add to a list.
+    [List Id]
+        The id of a list that you wish to add the prospect to.
+
+=== Results
+    This handler returns no results.
+
+==== Sample Configuration
+    Email:                                     test.user@acme.com
+    List Id:                                   15648
+
+=== Detailed Description
+    This handler uses the Pardot REST API to add an existing prospect to a list. 
+    To configure the info values, you'll need your email, password, and a user 
+    key. This key can be found in your account settings under the description 
+    of API User Key. After configuring the handler, all the information can then 
+    be used to send and API call to Pardot to add the prospect to the given
+    list. 

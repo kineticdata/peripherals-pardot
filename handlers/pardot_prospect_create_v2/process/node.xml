@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="pardot_prospect_create" name="Pardot Prospect Create" schema_version="1.0" version="2">
+    <author>support@kineticdata.com</author>
+    <description>Creates a prospect in Pardot.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="email" label="Email" required="true"
+            tooltip="The email for the new prospect that will be created."/>
+        <parameter id="first_name" label="First Name" required="false"
+            tooltip="The first name of the new prospect."/>
+        <parameter id="last_name" label="Last Name" required="false"
+            tooltip="The last name of the new prospect."/>
+        <parameter id="company" label="Company" required="false"
+            tooltip="The company of the new prospect."/>
+        <parameter id="campaign_id" label="Campaign Id" required="true"
+            tooltip="The campaign id for the campaign that the new prospect will be added to."/>
+        <parameter id="phone" label="Phone" required="false"
+            tooltip="The phone number of the new prospect."/>
+        <parameter id="assign_to" label="Assign to" required="false"
+            tooltip="The email of the user you wish to assign this issue to. Will be assigned to the email address contained in the info values if left blank."/>
+    </parameters>
+    <handler name="pardot_prospect_create" version="2">
+        <infos>
+            <info name="email">&lt;%= @info['email'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="api_user_key">&lt;%= @info['api_user_key'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="email">&lt;%= @parameters['email'] %&gt;</parameter>
+            <parameter name='first_name'>&lt;%= @parameters['first_name'] %&gt;</parameter>
+            <parameter name='last_name'>&lt;%= @parameters['last_name'] %&gt;</parameter>
+            <parameter name='company'>&lt;%= @parameters['company'] %&gt;</parameter>
+            <parameter name='campaign_id'>&lt;%= @parameters['campaign_id'] %&gt;</parameter>
+            <parameter name='phone'>&lt;%= @parameters['phone'] %&gt;</parameter>
+            <parameter name='assign_to'>&lt;%= @parameters['assign_to'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="id"/>
+    </results>
+</taskDefinition>

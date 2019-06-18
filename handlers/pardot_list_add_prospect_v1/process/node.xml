@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="pardot_list_add_prospect" name="Pardot List Add Prospect" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Adds a prospect to an existing list in Pardot.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="email" label="Email" required="true"
+            tooltip="The email for the prospect that you wish to add to a list."/>
+        <parameter id="list_id" label="List Id" required="true"
+            tooltip="The id of a list that you wish to add the prospect to."/>
+    </parameters>
+    <handler name="pardot_list_add_prospect" version="1">
+        <infos>
+            <info name="email">&lt;%= @info['email'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="api_user_key">&lt;%= @info['api_user_key'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="email">&lt;%= @parameters['email'] %&gt;</parameter>
+            <parameter name='list_id'>&lt;%= @parameters['list_id'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+    </results>
+</taskDefinition>

@@ -1,0 +1,44 @@
+== Pardot_Prospect_Create_V2
+    This handler creates a prospect in Pardot.
+
+=== Parameters
+    [Email]
+        The email for the new prospect that will be created.
+    [First Name]
+        The first name of the new prospect.
+    [Last Name]
+        The last name of the new prospect.
+    [Company]
+        The company of the new prospect.
+    [Campaign Id]
+        The campaign id for the campaign that the new prospect will be added to.
+    [Phone]
+        The phone number of the new prospect.
+    [Assign To]
+        The email of the user you wish to assign this issue to. Will be assigned
+        to the email address contained in the info values if left blank.
+
+=== Results
+    [Id]
+      The id of the prospect that was just created.
+
+==== Sample Configuration
+    Email:                                     test.user@acme.com
+    First Name:                                Test
+    Last Name:                                 User
+    Company:                                   For Testing
+    Campaign Id:                               9871
+    Phone:                                     202-555-0127
+    Assign To:                                 mary.manager@acme.com
+
+=== Detailed Description
+    This handler uses the Pardot REST API to create a new prospect. To configure
+    the info values, you'll need your email, password, and a user key. This key
+    can be found in your account settings under the description of API User Key.
+    After configuring the handler, all the information can then be used to send
+    and API call to Pardot to create a new prospect. If the Assign To parameter
+    is left blank, the new prospect will be assigned to the user that is
+    authenticated in the info values. If you want to assign a different user,
+    include an email address in the Assign To parameter. This will cause 2 other
+    API calls to be kicked off, one that reassigns the user from the info values
+    and another one that then assigns the user from the Assign To parameter.

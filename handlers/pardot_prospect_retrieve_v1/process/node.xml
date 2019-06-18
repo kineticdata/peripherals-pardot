@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="pardot_prospect_retrieve" name="Pardot Prospect Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Retrieves a prospect in Pardot.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="email" label="Email" required="true"
+            tooltip="The email of the prospect you want to retrieve."/>
+    </parameters>
+    <handler name="pardot_prospect_retrieve" version="1">
+        <infos>
+            <info name="email">&lt;%= @info['email'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="api_user_key">&lt;%= @info['api_user_key'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="email">&lt;%= @parameters['email'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="id"/>
+        <result name="first_name"/>
+        <result name="last_name"/>
+        <result name="campaign_id"/>
+        <result name="email"/>
+        <result name="phone"/>
+        <result name="assigned_to"/>
+    </results>
+</taskDefinition>
